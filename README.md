@@ -1,6 +1,11 @@
 # Email Archiver
 A Salesforce prototype using a Big Object to archive and restore emails. There are still improvements to make, but provides a basic setup (including batching and scheduling) for archiving and restoring emails. Currently the MessageDate is the only indexed field for the Big Object and the batch class scheduled emails that have a message date greater than one year.
 
+<a href="https://githubsfdeploy.herokuapp.com?owner=Clint-Chester&repo=sfdc-emailArchiver&ref=master">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
+
 <h2>To Do List</h2>
 <ul>
   <li>Create Lightning Component / Visualforce Component to display and restore emails from the Big Object</li>
