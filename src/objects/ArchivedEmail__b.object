@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to store all archived emails.</description>
+    <fields>
+        <fullName>ActivityId__c</fullName>
+        <description>ID of the activity that is associated with the email. Usually represents an open task that is created for the case owner when a new unread email message is received. ActivityId can only be specified for emails on cases. It’s auto-created for other entities.</description>
+        <externalId>false</externalId>
+        <label>Activity ID</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BccAddress__c</fullName>
+        <description>A string array of email addresses for recipients who were sent a blind carbon copy of the email message. Include only email addresses that are not associated with Contact, Lead, or User records in Salesforce. If the recipient is a contact, lead, or user, add their ID to the BccIds field instead of adding their email address to the BccAddress field. Then the email message is automatically associated with the contact, lead, or user.</description>
+        <externalId>false</externalId>
+        <label>BCC Address</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BccIds__c</fullName>
+        <description>A string array of IDs for contacts, leads, and users who were sent a blind carbon copy of the email message. Each ID is linked to an EmailMessageRelation record, which represents the relationship between an email message and a Contact, Lead, or User record.</description>
+        <externalId>false</externalId>
+        <label>BCC IDs</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CcAddress__c</fullName>
+        <description>A string array of email addresses for recipients who were sent a carbon copy of the email message. Include only email addresses that are not associated with Contact, Lead, or User records in Salesforce. If the recipient is a contact, lead, or user, add their ID to the CcIds field instead of adding their email address to the CcAddress field. Then the email message is automatically associated with the contact, lead, or user.</description>
+        <externalId>false</externalId>
+        <label>CC Address</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CcIds__c</fullName>
+        <description>A string array of IDs for contacts, leads, and users who were sent a carbon copy of the email message. Each ID is linked to an EmailMessageRelation record, which represents the relationship between an email message and a Contact, Lead, or User record.</description>
+        <externalId>false</externalId>
+        <label>CC IDs</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContentDocumentIds__c</fullName>
+        <description>A string array of IDs for content documents, such as files and attachments, that are associated with an email. Each ID is linked to a ContentDocumentLink record, which represents the relationship between an email message and a content document record.</description>
+        <externalId>false</externalId>
+        <label>Content Document IDs</label>
+        <length>1000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>FromAddress__c</fullName>
+        <description>The address that originated the email. When using this field, specify an email address that exists in EmailMessageRelation, with a RelationType of FromAddress.</description>
+        <externalId>false</externalId>
+        <label>From Address</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FromName__c</fullName>
+        <description>The sender’s name. When using this field, specify an email address that exists in EmailMessageRelation, with a RelationType of FromAddress.</description>
+        <externalId>false</externalId>
+        <label>From Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HasAttachment__c</fullName>
+        <description>Indicates whether the email was sent with an attachment (true) or not (false).</description>
+        <externalId>false</externalId>
+        <label>Has Attachment</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Headers__c</fullName>
+        <description>The Internet message headers of the incoming email. Used for debugging and tracing purposes. Does not apply to outgoing emails.</description>
+        <externalId>false</externalId>
+        <label>Headers</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>HtmlBody__c</fullName>
+        <description>The body of the email in HTML format.</description>
+        <externalId>false</externalId>
+        <label>HTML Body</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Incoming__c</fullName>
+        <description>Indicates whether the email was received (true) or sent (false).</description>
+        <externalId>false</externalId>
+        <label>Is Incoming</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsClientManaged__c</fullName>
+        <description>If EmailMessage is created with IsClientManaged set to true, users can modify EmailMessage.ContentDocumentIds to link file attachments even when the Status of the EmailMessage is not set to Draft.</description>
+        <externalId>false</externalId>
+        <label>Is Client Managed</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsDeleted__c</fullName>
+        <description>Indicates whether the object has been moved to the Recycle Bin (true) or not (false). Label is Deleted.</description>
+        <externalId>false</externalId>
+        <label>Deleted</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsExternallyVisible__c</fullName>
+        <description>If the community case feed is enabled, IsExternallyVisible controls the external visibility of emails in communities. When IsExternallyVisible is set to true—its default value—email messages are visible to external users in the case feed. Only emails with the ParentId field populated are available to be externally visible in communities. This field can’t be updated if the email’s Status is set to Draft.</description>
+        <externalId>false</externalId>
+        <label>Is Externally Visible</label>
+        <length>5</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MessageDate__c</fullName>
+        <description>The date the email was created.</description>
+        <externalId>false</externalId>
+        <label>Message Date</label>
+        <required>true</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>MessageIdentifier__c</fullName>
+        <description>The ID of the email message.</description>
+        <externalId>false</externalId>
+        <label>Message Identifier</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentId__c</fullName>
+        <description>ID of the case that’s associated with the email.</description>
+        <externalId>false</externalId>
+        <label>Parent Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Parent_Case</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>RelatedToId__c</fullName>
+        <description>The RelatedToId represents nonhuman objects such as accounts, opportunities, campaigns, cases, or custom objects. RelatedToIds are polymorphic. Polymorphic means a RelatedToId is equivalent to the ID of a related object.</description>
+        <externalId>false</externalId>
+        <label>Related To</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ReplyToEmailMessageId__c</fullName>
+        <description>ID of the inbound or outbound EmailMessage the current EmailMessage is a reply to. It’s not possible to reply to a message whose Status is Draft.</description>
+        <externalId>false</externalId>
+        <label>Reply To Email Message</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Read only. The status of the email. For example, New, Read, Replied, Sent, Forwarded, or Draft.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subject__c</fullName>
+        <description>The subject line of the email.</description>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>3000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>TextBody__c</fullName>
+        <description>The body of the email, in plain text format. If TextBody is not set, then it is extracted from HtmlBody.</description>
+        <externalId>false</externalId>
+        <label>Text Body</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ThreadIdentifier__c</fullName>
+        <description>The ID of the email thread the email message belongs to.</description>
+        <externalId>false</externalId>
+        <label>Thread Identifier</label>
+        <length>18</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ToAddress__c</fullName>
+        <description>A string array of email addresses for recipients who were sent the email message. Include only email addresses that are not associated with Contact, Lead, or User records in Salesforce. If the recipient is a contact, lead, or user, add their ID to the ToIds field instead of adding their email address to the ToAddress field. Then the email message is automatically associated with the contact, lead, or user.</description>
+        <externalId>false</externalId>
+        <label>To Address</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ToIds__c</fullName>
+        <description>A string array of IDs for contacts, leads, and users who were sent the email message. Each ID is linked to an EmailMessageRelation record, which represents the relationship between an email message and a Contact, Lead, or User record.</description>
+        <externalId>false</externalId>
+        <label>To IDs</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <indexes>
+        <fullName>Archived_Email_Index</fullName>
+        <fields>
+            <name>MessageDate__c</name>
+            <sortDirection>DESC</sortDirection>
+        </fields>
+        <label>Archived Email Index</label>
+    </indexes>
+    <label>Archived Email</label>
+    <pluralLabel>Archived Emails</pluralLabel>
+</CustomObject>
