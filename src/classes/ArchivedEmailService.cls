@@ -46,7 +46,6 @@ public with sharing class ArchivedEmailService {
             a.ToIds__c = String.join(e.ToIds, ',');
             archivedEmails.add(a);
         }
-        System.debug(archivedEmails);
         //Now perform the database operations, insert the archived emails and delete the normal emails
         SavePoint sp = Database.setSavePoint();
         try {
