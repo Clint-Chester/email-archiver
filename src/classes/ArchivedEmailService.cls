@@ -70,10 +70,10 @@ public with sharing class ArchivedEmailService {
     public static void restoreEmail(ArchivedEmail__b archivedEmail) {
         //Instantiate the new email and its values.
         EmailMessage email = new EmailMessage();
-        if(email.ParentId != null) {
+        if(archivedEmail.ParentId__c != null) {
             email.ActivityId = archivedEmail.ActivityId__c;
         }
-		email.BccAddress = archivedEmail.BccAddress__c;
+	email.BccAddress = archivedEmail.BccAddress__c;
         email.CcAddress = archivedEmail.CcAddress__c;
         email.FromAddress = archivedEmail.FromAddress__c;
         email.FromName = archivedEmail.FromName__c;
